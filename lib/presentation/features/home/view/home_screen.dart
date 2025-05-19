@@ -14,11 +14,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppConstraints.backgroundColor,
       appBar: HomeAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          color: Color.fromRGBO(241, 243, 245, 1),
+       
+         // color: Color.fromRGBO(241, 243, 245, 1),
           child: Column(
             children: [
               BannerWidget(imageUrl: AppConstraints.banner),
@@ -31,11 +33,12 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
                   color: AppConstraints.textColor,
-                  height: 1.0,
-                  letterSpacing: 0,
+                  height: 1.0.h,
                 ),
               ),
+              SizedBox(height: 30.h),
               StickerSection(),
+              SizedBox(height: 22.h),
               ProductList(),
             ],
           ),
@@ -44,5 +47,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

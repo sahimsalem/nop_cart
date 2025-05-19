@@ -7,6 +7,7 @@ class AppConstraints {
   static const Color appBarShadow = Color(0x0D000000);
   static const Color iconColor = Color.fromRGBO(0, 0, 0, 1);
   static const Color textColor = Color(0xFF000000);
+  static const Color backgroundColor = Color.fromRGBO(241, 243, 245, 1);
 
 
   //fonts

@@ -11,24 +11,22 @@ class ProductList extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.all(4),
-      gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 220.w,
+      padding:  EdgeInsets.all(4.r),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 140.w,
         mainAxisSpacing: 10.w,
         crossAxisSpacing: 10.w,
-      
+        childAspectRatio: 0.62
       ),
       itemCount: AppConstraints.productData.length,
       itemBuilder: (context, index) {
         final data = AppConstraints.productData[index];
-        return IntrinsicHeight(
-          child: ProductCard(
-            imageUrl: data['imageUrl']! as String,
-            title: data['title']! as String,
-            price: data['price']! as double,
-            originalPrice: data['originalPrice']! as double,
-            rating: data['rating']! as double,
-          ),
+        return ProductCard(
+          imageUrl: data['imageUrl']! as String,
+          title: data['title']! as String,
+          price: data['price']! as double,
+          originalPrice: data['originalPrice']! as double,
+          rating: data['rating']! as double,
         );
       },
     );

@@ -14,7 +14,7 @@ class BannerWidget extends StatelessWidget {
       height: 179.h,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(imageUrl),
+          image: AssetImage('assets/banner.png'),
           fit: BoxFit.fill,
         ),
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(10)),

@@ -11,22 +11,38 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      enableScaleWH: () => true,
-      enableScaleText: () => true,
-      designSize: Size(428, 1136), // Set to your design's width and height
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-          ),
-          home: child,
+    return Builder(
+      builder: (context) {
+        final width = MediaQuery.of(context).size.width;
+        Size designSize;
+        if (width >= 900) {
+          // Desktop
+          designSize = const Size(1200, 900);
+        } else if (width >= 600) {
+          // Tablet
+          designSize = const Size(800, 1280);
+        } else {
+          // Phone
+          designSize = const Size(428, 1136);
+        }
+        return ScreenUtilInit(
+          designSize: designSize,
+          enableScaleWH: () => true,
+          enableScaleText: () => true,
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder: (context, child) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+              ),
+              home: child,
+            );
+          },
+          child: const HomeScreen(),
         );
       },
-      child: const HomeScreen(),
     );
   }
 }

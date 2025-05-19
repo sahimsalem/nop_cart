@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nop_cart/presentation/core/constraints/app_constraints.dart';
 
 class ProductCard extends StatelessWidget {
   final String imageUrl;
@@ -35,7 +36,6 @@ class ProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Image section
           Stack(
             children: [
               ClipRRect(
@@ -80,7 +80,12 @@ class ProductCard extends StatelessWidget {
           ),
           // Content section
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+            padding: EdgeInsets.fromLTRB(
+              10.h,
+              13.h,
+              10.h,
+              24.h,
+            ), //EdgeInsets.symmetric(vertical: 13.h, horizontal: 10.w),
             child: Column(
               children: [
                 // Title
@@ -90,6 +95,7 @@ class ProductCard extends StatelessWidget {
                     title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                      color: AppConstraints.textColor,
                       fontFamily: 'Barlow',
                       fontWeight: FontWeight.bold,
                       fontSize: 14.sp,
@@ -98,18 +104,20 @@ class ProductCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
+                SizedBox(height: 10.h),
                 // Rating
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(5, (index) {
                     return Icon(
                       index < rating ? Icons.star : Icons.star_border,
-                      size: 14.sp,
+                      size: 10.sp,
                       color: Colors.amber,
                     );
                   }),
                 ),
                 // Price section
+                SizedBox(height: 10.h),
                 Wrap(
                   spacing: 6.w,
                   runSpacing: 2.h,
@@ -117,20 +125,20 @@ class ProductCard extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Text(
-                      '\$${price.toStringAsFixed(2)}',
+                      '\$${price.toString()}',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
-                        fontSize: 14.sp,
+                        fontSize: 10.sp,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      '\$${originalPrice.toStringAsFixed(2)}',
+                      '\$${originalPrice.toString()}',
                       style: TextStyle(
                         decoration: TextDecoration.lineThrough,
                         color: Colors.grey,
-                        fontSize: 12.sp,
+                        fontSize: 10.sp,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
