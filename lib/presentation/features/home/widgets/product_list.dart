@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nop_cart/core/widgets/product_card.dart';
+import 'package:nop_cart/presentation/core/widgets/product_card.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList({super.key});

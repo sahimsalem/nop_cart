@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nop_cart/core/widgets/sticker_widget.dart';
+import 'package:nop_cart/presentation/core/widgets/sticker_widget.dart';
 
 class StickerSection extends StatelessWidget {
   const StickerSection({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'features/electronics/presentation/pages/electronics_screen.dart';
+import 'package:nop_cart/presentation/features/home/view/home_screen.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ElectronicsScreen(),
+      home: HomeScreen(),
     );
   }
 }
