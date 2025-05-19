@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BannerWidget extends StatelessWidget {
   final String imageUrl;
@@ -7,22 +8,10 @@ class BannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-  
-    double bannerHeight;
-    if (screenWidth < 600) {
-      bannerHeight = 200; // Small devices
-    } else if (screenWidth < 900) {
-      bannerHeight = 300; // Medium devices
-    } else if (screenWidth < 1200) {
-      bannerHeight = 400; // Tablets
-    } else {
-      bannerHeight = 500; // Large screens
-    }
-
+ 
     return Container(
       width: double.infinity,
-      height: bannerHeight,
+      height: 179.h,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(imageUrl),

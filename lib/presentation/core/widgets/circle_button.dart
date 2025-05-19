@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nop_cart/presentation/core/constraints/app_constraints.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CircleIconButton extends StatelessWidget {
   final IconData icon;
@@ -9,9 +9,29 @@ class CircleIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-      child: Icon(icon, color: AppConstraints.iconColor),
+      width: 53.w,
+      height: 53.h,
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.5),
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0x0D000000),
+            offset: const Offset(0, 2),
+            blurRadius: 3.r,
+          ),
+        ],
+      ),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.all(17.5.r),
+          child: Icon(
+            icon,
+            color: const Color(0xFF071B4D),
+            size: 18.sp,
+          ),
+        ),
+      ),
     );
   }
 }
