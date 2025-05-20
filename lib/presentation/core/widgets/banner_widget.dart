@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BannerWidget extends StatelessWidget {
   final String imageUrl;
@@ -8,16 +7,16 @@ class BannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- 
-    return Container(
-      width: double.infinity,
-      height: 179.h,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/banner.png'),
-          fit: BoxFit.fill,
+    return AspectRatio(
+      aspectRatio: 2.39, // Calculated aspect ratio
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/banner.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: const BorderRadius.vertical(bottom: Radius.circular(10)),
         ),
-        borderRadius: const BorderRadius.vertical(bottom: Radius.circular(10)),
       ),
     );
   }

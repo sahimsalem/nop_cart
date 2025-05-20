@@ -16,7 +16,7 @@ class ProductList extends StatelessWidget {
         maxCrossAxisExtent: 140.w,
         mainAxisSpacing: 10.w,
         crossAxisSpacing: 10.w,
-        childAspectRatio: 0.62
+        childAspectRatio: 0.5
       ),
       itemCount: AppConstraints.productData.length,
       itemBuilder: (context, index) {

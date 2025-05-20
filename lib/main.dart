@@ -14,21 +14,12 @@ class MyApp extends StatelessWidget {
     return Builder(
       builder: (context) {
         final width = MediaQuery.of(context).size.width;
-        Size designSize;
-        if (width >= 900) {
-          // Desktop
-          designSize = const Size(1200, 900);
-        } else if (width >= 600) {
-          // Tablet
-          designSize = const Size(800, 1280);
-        } else {
-          // Phone
-          designSize = const Size(428, 1136);
-        }
+        final height = MediaQuery.of(context).size.height;
+       
         return ScreenUtilInit(
-          designSize: designSize,
+          designSize: Size(width-12, height-12),
           enableScaleWH: () => true,
-          enableScaleText: () => true,
+          enableScaleText: () => false,
           minTextAdapt: true,
           splitScreenMode: true,
           builder: (context, child) {

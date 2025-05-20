@@ -15,7 +15,7 @@ class ProductCard extends StatelessWidget {
     required this.title,
     required this.price,
     required this.originalPrice,
-    this.rating = 4.0,
+    this.rating = 5.0,
   });
 
   @override
@@ -38,13 +38,13 @@ class ProductCard extends StatelessWidget {
         children: [
           Stack(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
-                child: Image.network(
-                  imageUrl,
-                  height: 121.h,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+              AspectRatio(
+                aspectRatio: 1, 
+                child: ClipRRect(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(10.r),
+                  ),
+                  child: Image.network(imageUrl, fit: BoxFit.cover),
                 ),
               ),
               Positioned(
@@ -85,7 +85,7 @@ class ProductCard extends StatelessWidget {
               13.h,
               10.h,
               24.h,
-            ), //EdgeInsets.symmetric(vertical: 13.h, horizontal: 10.w),
+            ), 
             child: Column(
               children: [
                 // Title
@@ -128,6 +128,7 @@ class ProductCard extends StatelessWidget {
                       '\$${price.toString()}',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                         fontFamily: 'Barlow',
                         color: Colors.blue,
                         fontSize: 10.sp,
                       ),
@@ -136,6 +137,7 @@ class ProductCard extends StatelessWidget {
                     Text(
                       '\$${originalPrice.toString()}',
                       style: TextStyle(
+                         fontFamily: 'Barlow',
                         decoration: TextDecoration.lineThrough,
                         color: Colors.grey,
                         fontSize: 10.sp,

@@ -6,7 +6,6 @@ import 'package:nop_cart/presentation/features/home/widgets/product_list.dart';
 import 'package:nop_cart/presentation/features/home/widgets/sticker_section.dart';
 import '../../../core/widgets/banner_widget.dart';
 
-// ... existing code ...
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,30 +17,26 @@ class HomeScreen extends StatelessWidget {
       appBar: HomeAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Container(
-       
-         // color: Color.fromRGBO(241, 243, 245, 1),
-          child: Column(
-            children: [
-              BannerWidget(imageUrl: AppConstraints.banner),
-              SizedBox(height: 29.h),
-              Text(
-                'Electronics',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: AppConstraints.fonts,
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppConstraints.textColor,
-                  height: 1.0.h,
-                ),
+        child: Column(
+          children: [
+            BannerWidget(imageUrl: AppConstraints.banner),
+            SizedBox(height: 29.h),
+            Text(
+              'Electronics',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: AppConstraints.fonts,
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w700,
+                color: AppConstraints.textColor,
+                height: 1.0.h,
               ),
-              SizedBox(height: 30.h),
-              StickerSection(),
-              SizedBox(height: 22.h),
-              ProductList(),
-            ],
-          ),
+            ),
+            SizedBox(height: 30.h),
+            StickerSection(),
+            SizedBox(height: 22.h),
+            ProductList(),
+          ],
         ),
       ),
     );
