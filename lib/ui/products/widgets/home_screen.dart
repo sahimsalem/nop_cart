@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nop_cart/presentation/core/constraints/app_constraints.dart';
-import 'package:nop_cart/presentation/core/widgets/home_appbar.dart';
-import 'package:nop_cart/presentation/features/home/widgets/product_list.dart';
-import 'package:nop_cart/presentation/features/home/widgets/sticker_section.dart';
-import '../../../core/widgets/banner_widget.dart';
+import 'package:nop_cart/ui/core/constraints/app_constraints.dart';
+import 'package:nop_cart/ui/core/ui/banner_widget.dart';
+import 'package:nop_cart/ui/core/ui/home_appbar.dart';
+import 'package:nop_cart/ui/products/widgets/product_list.dart';
+import 'package:nop_cart/ui/products/widgets/sticker_section.dart';
+
 
 
 class HomeScreen extends StatelessWidget {

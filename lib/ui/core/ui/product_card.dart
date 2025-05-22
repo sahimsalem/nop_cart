@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nop_cart/presentation/core/constraints/app_constraints.dart';
+import 'package:nop_cart/ui/core/constraints/app_constraints.dart';
 
 class ProductCard extends StatelessWidget {
   final String imageUrl;
@@ -21,15 +20,15 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8.r),
+      margin: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
-            blurRadius: 4.r,
-            offset: Offset(0, 2.h),
+            blurRadius: 4,
+            offset: Offset(0, 2),
           ),
         ],
       ),
@@ -39,28 +38,28 @@ class ProductCard extends StatelessWidget {
           Stack(
             children: [
               AspectRatio(
-                aspectRatio: 1, 
+                aspectRatio: 1,
                 child: ClipRRect(
                   borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(10.r),
+                    top: Radius.circular(10),
                   ),
                   child: Image.network(imageUrl, fit: BoxFit.cover),
                 ),
               ),
               Positioned(
-                top: 15.h,
-                left: 15.w,
+                top: 15,
+                left: 15,
                 child: Icon(
                   Icons.favorite_border,
-                  size: 16.sp,
+                  size: 16,
                   color: Color.fromRGBO(255, 32, 45, 1),
                 ),
               ),
               Positioned(
-                bottom: 8.h,
-                right: 8.w,
+                bottom: 8,
+                right: 8,
                 child: CircleAvatar(
-                  radius: 18.r,
+                  radius: 18,
                   backgroundColor: Colors.white,
                   child: ElevatedButton(
                     onPressed: () {},
@@ -68,10 +67,9 @@ class ProductCard extends StatelessWidget {
                       shape: const CircleBorder(),
                       padding: EdgeInsets.zero,
                     ),
-                    child: Image.asset(
-                      'assets/basket.png',
-                      width: 24.w,
-                      height: 24.h,
+                    child: AspectRatio(
+                      aspectRatio: .9,
+                      child: Image.asset('assets/basket.png'),
                     ),
                   ),
                 ),
@@ -80,17 +78,12 @@ class ProductCard extends StatelessWidget {
           ),
           // Content section
           Padding(
-            padding: EdgeInsets.fromLTRB(
-              10.h,
-              13.h,
-              10.h,
-              24.h,
-            ), 
+            padding: EdgeInsets.fromLTRB(10, 13, 10, 20),
             child: Column(
               children: [
                 // Title
                 SizedBox(
-                  height: 22.h,
+                  height: 32,
                   child: Text(
                     title,
                     textAlign: TextAlign.center,
@@ -98,29 +91,29 @@ class ProductCard extends StatelessWidget {
                       color: AppConstraints.textColor,
                       fontFamily: 'Barlow',
                       fontWeight: FontWeight.bold,
-                      fontSize: 14.sp,
+                      fontSize: 14,
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 8),
                 // Rating
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(5, (index) {
                     return Icon(
                       index < rating ? Icons.star : Icons.star_border,
-                      size: 10.sp,
+                      size: 10,
                       color: Colors.amber,
                     );
                   }),
                 ),
                 // Price section
-                SizedBox(height: 10.h),
+                SizedBox(height: 10),
                 Wrap(
-                  spacing: 6.w,
-                  runSpacing: 2.h,
+                  spacing: 6,
+                  runSpacing: 2,
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
@@ -128,19 +121,19 @@ class ProductCard extends StatelessWidget {
                       '\$${price.toString()}',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                         fontFamily: 'Barlow',
+                        fontFamily: 'Barlow',
                         color: Colors.blue,
-                        fontSize: 10.sp,
+                        fontSize: 10,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       '\$${originalPrice.toString()}',
                       style: TextStyle(
-                         fontFamily: 'Barlow',
+                        fontFamily: 'Barlow',
                         decoration: TextDecoration.lineThrough,
                         color: Colors.grey,
-                        fontSize: 10.sp,
+                        fontSize: 10,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),

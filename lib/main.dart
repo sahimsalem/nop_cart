@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nop_cart/presentation/features/home/view/home_screen.dart';
+import 'package:nop_cart/ui/products/widgets/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,12 +15,14 @@ class MyApp extends StatelessWidget {
       builder: (context) {
         final width = MediaQuery.of(context).size.width;
         final height = MediaQuery.of(context).size.height;
+
+
        
         return ScreenUtilInit(
           designSize: Size(width-12, height-12),
           enableScaleWH: () => true,
           enableScaleText: () => false,
-          minTextAdapt: true,
+          minTextAdapt: false,
           splitScreenMode: true,
           builder: (context, child) {
             return MaterialApp(

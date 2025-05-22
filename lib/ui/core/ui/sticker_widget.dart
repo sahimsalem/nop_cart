@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nop_cart/presentation/core/constraints/app_constraints.dart';
+import 'package:nop_cart/ui/core/constraints/app_constraints.dart';
 
 class StickerWidget extends StatelessWidget {
   final String imageUrl;

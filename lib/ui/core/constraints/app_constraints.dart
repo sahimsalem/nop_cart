@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nop_cart/presentation/core/widgets/sticker_widget.dart';
+import 'package:nop_cart/ui/core/ui/sticker_widget.dart';
 
 class AppConstraints {
   //Color
