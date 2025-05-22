@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nop_cart/ui/core/constraints/app_constraints.dart';
 
 class StickerWidget extends StatelessWidget {
@@ -11,24 +10,24 @@ class StickerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5.r),
+      padding: EdgeInsets.all(5),
     
-      height: 70.h,
+      height: 70,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(1000.r),
+        borderRadius: BorderRadius.circular(1000),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CircleAvatar(radius: 35.r, backgroundImage: NetworkImage(imageUrl)),
-          SizedBox(width: 12.w),
+          CircleAvatar(radius: 35, backgroundImage: NetworkImage(imageUrl)),
+          SizedBox(width: 4),
           Text(
             label,
-            style:  TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold,color: AppConstraints.textColor),
+            style:  TextStyle(fontSize: 12, fontWeight: FontWeight.bold,color: AppConstraints.textColor),
             textAlign: TextAlign.left,
           ),
-          SizedBox(width: 11.w),
+          SizedBox(width: 30),
         ],
       ),
     );
