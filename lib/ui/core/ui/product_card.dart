@@ -111,33 +111,38 @@ class ProductCard extends StatelessWidget {
                 ),
                 // Price section
                 SizedBox(height: 10),
-                Wrap(
-                  spacing: 6,
-                  runSpacing: 2,
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    Text(
-                      '\$${price.toString()}',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Barlow',
-                        color: Colors.blue,
-                        fontSize: 10,
+                SizedBox(
+                  height: 20,
+                  child: Wrap(
+                    spacing: 6,
+                    runSpacing: 2,
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Text(
+                        '\$${price.toString()}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Barlow',
+                          color: Colors.blue,
+                          fontSize: 10,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      '\$${originalPrice.toString()}',
-                      style: TextStyle(
-                        fontFamily: 'Barlow',
-                        decoration: TextDecoration.lineThrough,
-                        color: Colors.grey,
-                        fontSize: 10,
+                      Text(
+                        '\$${originalPrice.toString()}',
+                        style: TextStyle(
+                          fontFamily: 'Barlow',
+                          decoration: TextDecoration.lineThrough,
+                          color: Colors.grey,
+                          fontSize: 10,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
